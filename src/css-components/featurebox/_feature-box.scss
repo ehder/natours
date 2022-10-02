@@ -1,0 +1,53 @@
+.feature-box {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+    transition: .5s;
+    text-align: center;
+    box-shadow: 0 1.5rem 1rem rgb(0, 0, 0, 0.5);
+    height: 28rem;
+    overflow: hidden;
+    color: rgb(30, 247, 138);
+    border: 2px solid rgb(1, 98, 110, .2);
+
+    // animation: comeFromLeft 2s;
+    animation-fill-mode: backwards;
+
+    
+    @include respond(tab-port){
+        padding: 2rem;
+    }
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        transition: all 1s;
+
+        display: inline-block;
+        color: rgb(73, 163, 100);
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        @include respond(tab-port){
+            margin-bottom: 0;
+        }
+
+    }
+
+    &__text {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+
+    &:hover {
+        // transform: translateY(-3rem);
+        box-shadow: 0 2.5rem 2rem rgb(0, 0, 0, 0.5);
+        transform: translateY(-1.5rem) scale(1.07);
+        background: rgba(236, 239, 240, 0.7);
+        color: rgb(5, 5, 5);
+    }
+}
+
+

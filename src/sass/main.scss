@@ -1,0 +1,32 @@
+//base
+@import "./base/base";
+@import "./base/animation";
+@import "./base/typography";
+@import "./base/utilities";
+
+//abstracts
+@import "./abstracts/variables";
+@import "./abstracts/functions";
+@import "./abstracts/mininx";
+
+//css compoonets
+@import "../css-components/composition/composition"; // main
+@import "../css-components/buttons/button";  // button only
+@import "../css-components/buttons/radio-button";  // radio button only
+@import "../css-components/featurebox/feature-box";  // section-features
+@import "../css-components/card/card.scss"; // section-tours
+@import "../css-components/stories/stories";// section-stories
+@import "../css-components/bg-video/bg-video";// section-stories background
+@import "../css-components/booking/booking";// section-booking
+@import "../css-components/form/form";// form design
+
+//layout
+@import "../css-components/layout/grid";// grid
+@import "../css-components/layout/header"; // header
+@import "../css-components/layout/footer"; // footer
+@import "../css-components/layout/navigation"; // navigation
+@import "../css-components/layout/popup"; // popup
+
+//pages
+@import "../css-components/pages/home.scss"; //storing section tag only eg. section-about, section-feature, section-tours etc...
+

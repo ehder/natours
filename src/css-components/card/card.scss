@@ -1,0 +1,165 @@
+.card {
+    //Functionalities
+    perspective: 150rem;
+    -moz-perspective: 150rem; // for mozila firefox browser
+    position: relative;
+    height: 52rem;
+
+    &__side {
+        
+        height: 52rem;
+        width: 100%;
+        transition: all 1.2s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden; // hide the back part of the element.
+
+        box-shadow: 0 1.5rem 5rem $color-shadow-black;
+        // border: 2px solid rgba(36, 54, 53, 0.4);
+        border-radius: .5rem;
+        overflow: hidden;
+
+        
+        &--front {
+            color: rgb(0, 0, 0,);
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background: linear-gradient(-60deg, $color-secondary-light, $color-secondary-dark);
+            }
+
+            &-2 {
+                background: linear-gradient(-60deg, $color-primary-light, $color-primary-dark);
+            }
+
+            &-3 {
+                
+                background: linear-gradient(-60deg, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+
+    //if you want to hover the card than the side is transform
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+    //.card:hover .card__side {}
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    //Front Side Styling ==================== FRONT
+    &__picture {
+        // background-size: cover;
+        height: 23rem;
+        background-blend-mode: color;
+        
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+
+        &--1{
+           background: linear-gradient(-60deg, $color-secondary-light, $color-secondary-dark),
+            url("../../assets/img/na1.jpg"); 
+            background-size: cover; 
+            
+        }
+
+        &--2{
+            background: linear-gradient(-60deg, $color-primary-light ,  $color-primary-dark),
+            url("../../assets/img/na2.jpg"); 
+            background-size: cover; 
+         }
+
+         &--3{
+            background: linear-gradient(-60deg, $color-tertiary-light,  $color-tertiary-dark),
+            url("../../assets/img/na3.jpg");  
+            background-size: cover; 
+         }
+    }
+
+    &__heading {
+        text-align: right;
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: white;
+        position: absolute;
+        // display: inline-block;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+    
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        -webkit-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &--1 {
+            background: linear-gradient(-60deg, 
+            rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+        }
+        &--2 {
+            background: linear-gradient(-60deg, 
+            rgba($color-secondary-light, .85), rgba($color-primary-dark, .85));
+        }
+        &--3 {
+
+            background: linear-gradient(-60deg, 
+            rgba($color-secondary-light, .85), rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        ul{
+            list-style: none;
+            width: 70%;
+            margin: 0 auto;
+            li {
+                text-align: center;
+                
+                font-size: 1.5rem;
+                padding: 1rem;
+                
+                &:not(:last-child) {
+                    border-bottom: 1px solid gray;
+                }
+            }
+        }
+    }
+    
+    //Back Side Styling ==================== BACK
+
+    &__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    &__price-box {
+        text-align: center;
+        margin-bottom: 8rem;
+        color: white;
+    }
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
+    }
+
+}

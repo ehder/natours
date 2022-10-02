@@ -1,0 +1,101 @@
+.form {
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        font-size: 1.3rem;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rgb($color-white, .5);
+        border: none;  
+        transition: all .5s;  
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 .5rem 6rem rgb(15, 15, 15, .5);
+            border-bottom: 3px solid $color-primary-dark;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+        &::-webkit-input-placeholder{
+            color: $color-gray-white;
+            
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all 1s;
+    }
+
+    //this is simbling seletor : input and lebel are the same level -> +
+    //this is general simbling seletor : input and lebel are the same level -> ~
+    &__input:placeholder-shown + &__label{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        width: 50%;
+        display: inline-block;
+    }
+
+    &__radio-input {
+        // visibility: hidden;
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button {
+
+        height: 3rem;
+        width: 3rem;
+        border: .5rem solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: -.8rem;
+
+        &::after{
+            background: $color-primary;
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50% ;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+    }
+    //select the siblim
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+
+}
